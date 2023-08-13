@@ -1,19 +1,22 @@
 ---
-import Header from "../components/header.astro";
+import Header from "../components/header";
 import ServiceCard from "../components/service-card.astro";
 import ServiceTitle from "../components/service-title.astro";
 import Layout from "../layouts/main-layout.astro";
 ---
 
 <Layout title="Ingenia Clone | Inicio">
-  <Header />
+  <!-- header -->
+  <Header client:only="react" />
+
   <main>
+    <!-- hero section -->
     <section class="h-screen relative">
       <div
         class="container flex h-full items-center px-4 mx-auto xl:max-w-screen-xl"
       >
         <h1
-          class="text-5xl font-bold max-w-2xl leading-[1] text-white uppercase"
+          class="text-3xl sm:text-5xl font-bold max-w-2xl leading-[1] text-white uppercase"
         >
           Soluciones integrales en automatización industrial
         </h1>
@@ -36,6 +39,7 @@ import Layout from "../layouts/main-layout.astro";
       </div>
     </section>
 
+    <!-- about us section -->
     <section id="acerca-de-nosotros" class="grid lg:grid-cols-4 min-h-[550px]">
       <article
         class="grid place-items-center relative before:absolute before:filter before:grayscale px-8 before:-z-20 before:bg-[url('/about-us-1.webp')] before:bg-cover before:bg-center before:inset-0 before:brightness-[40%] hover:before:scale-110 overflow-hidden before:transition-all before:duration-300 before:hover:brightness-[30%] py-24"
@@ -101,7 +105,8 @@ import Layout from "../layouts/main-layout.astro";
       </article>
     </section>
 
-    <section class="grid" id="servicios">
+    <!-- services section -->
+    <section id="servicios" class="grid">
       <ServiceCard img="/services-01.webp" alt="">
         <ServiceTitle>
           Automatización de procesos y migración de tecnologías
