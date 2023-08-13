@@ -1,0 +1,33 @@
+---
+interface Props {
+  img: string;
+  alt: string;
+  isInverted?: boolean;
+}
+
+const { img, alt, isInverted = false } = Astro.props;
+---
+
+<article class="relative overflow-hidden min-h-[500px]">
+  <div
+    class="container grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 px-4 mx-auto h-full xl:max-w-screen-xl"
+  >
+    <picture
+      class={`absolute top-0 ${
+        !isInverted ? "left-0" : "left-0 lg:left-1/2"
+      } w-full h-1/2 lg:w-1/2 lg:h-full`}
+    >
+      <img src={img} alt={alt} class="object-cover w-full h-full" />
+    </picture>
+
+    <div
+      class={`${
+        !isInverted ? "col-start-2" : ""
+      } p-8 row-start-2 lg:row-start-1 grid h-full place-items-center`}
+    >
+      <div>
+        <slot />
+      </div>
+    </div>
+  </div>
+</article>
