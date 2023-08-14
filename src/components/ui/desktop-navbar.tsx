@@ -10,8 +10,7 @@ function DesktopNavbar({ navLinks }: DesktopNavbarProps) {
           <li className="flex">
             <a
               href={item.href}
-              className="px-2 text-white hover:underline focus-visible:underline"
-            >
+              className="px-2 text-white hover:underline focus-visible:underline">
               {item.label}
             </a>
           </li>
@@ -20,8 +19,7 @@ function DesktopNavbar({ navLinks }: DesktopNavbarProps) {
 
       <a
         href="#contacto"
-        className="px-4 grid place-items-center uppercase font-semibold bg-blue-800 text-white py-2 rounded group-data-[sticky]:bg-white transition-colors group-data-[sticky]:text-blue-800"
-      >
+        className="px-4 grid place-items-center uppercase font-semibold bg-blue-800 text-white py-2 rounded group-data-[sticky]:bg-white transition-colors group-data-[sticky]:text-blue-800">
         Contacto
       </a>
     </nav>

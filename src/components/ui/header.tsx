@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import MenuIcon from "../icons/menu-icon";
 import DesktopNavbar from "./desktop-navbar";
 import MobileNavbar from "./mobile-navbar";
 
@@ -37,8 +38,7 @@ function Header() {
       <header
         id="primary-header"
         data-sticky={isSticky}
-        className="fixed top-0 left-0 w-full z-20 backdrop-blur-sm group data-[sticky=true]:bg-blue-800 transition-colors"
-      >
+        className="fixed top-0 left-0 w-full z-20 backdrop-blur-sm group data-[sticky=true]:bg-blue-800 transition-colors">
         <div className="container px-4 py-4 items-center flex justify-between mx-auto xl:max-w-screen-xl">
           <a href="/">
             <img src="/logo.webp" alt="" className="h-[32px]" />
@@ -55,21 +55,8 @@ function Header() {
           <button
             aria-label="open menu"
             onClick={() => setIsOpen(true)}
-            className="md:hidden text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill="currentColor"
-                fillRule="evenodd"
-                d="M2 8a1 1 0 0 1 1-1h10.308a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm0-4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm0 4a1 1 0 0 1 1-1h10.308a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Z"
-                clipRule="evenodd"
-              />
-            </svg>
+            className="md:hidden text-white">
+            <MenuIcon />
           </button>
         </div>
       </header>

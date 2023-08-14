@@ -1,7 +1,9 @@
 ---
-import Header from "../components/header";
-import ServiceCard from "../components/service-card.astro";
-import ServiceTitle from "../components/service-title.astro";
+import AboutUsCard from "../components/ui/about-us-card";
+import AboutUsCardTitle from "../components/ui/about-us-card-title";
+import Header from "../components/ui/header";
+import ServiceCard from "../components/ui/service-card";
+import ServiceCardTitle from "../components/ui/service-card-title";
 import Layout from "../layouts/main-layout.astro";
 ---
 
@@ -10,55 +12,41 @@ import Layout from "../layouts/main-layout.astro";
   <Header client:only="react" />
 
   <main>
-    <!-- hero section -->
     <section class="h-screen relative">
       <div
-        class="container flex h-full items-center px-4 mx-auto xl:max-w-screen-xl"
-      >
+        class="container flex h-full items-center px-4 mx-auto xl:max-w-screen-xl">
         <h1
-          class="text-3xl sm:text-5xl font-bold max-w-2xl leading-[1] text-white uppercase"
-        >
+          class="text-3xl sm:text-5xl font-bold max-w-2xl leading-[1] text-white uppercase">
           Soluciones integrales en automatización industrial
         </h1>
       </div>
-
-      <!-- background stuff -->
-      <div class="absolute w-full h-full left-0 pointer-events-none top-0">
-        <div
-          class="w-full h-full bg-blue-700 -z-20 inset-0 absolute opacity-50"
-        >
-        </div>
+      <div
+        class="absolute w-full h-full left-0 pointer-events-none top-0 before:absolute before:w-full before:h-full before:bg-blue-700 before:inset-0 before:opacity-50 before:-z-20">
         <video
           autoplay
           loop
           muted
-          class="w-full inset-0 absolute -z-30 h-full object-cover"
-        >
+          class="w-full inset-0 absolute -z-30 h-full object-cover">
           <source src="/hero-video.mp4" />
         </video>
       </div>
     </section>
 
-    <!-- about us section -->
-    <section id="acerca-de-nosotros" class="grid lg:grid-cols-4 min-h-[550px]">
-      <article
-        class="grid place-items-center relative before:absolute before:filter before:grayscale px-8 before:-z-20 before:bg-[url('/about-us-1.webp')] before:bg-cover before:bg-center before:inset-0 before:brightness-[40%] hover:before:scale-110 overflow-hidden before:transition-all before:duration-300 before:hover:brightness-[30%] py-24"
-      >
-        <div class="text-white">
-          <h2
-            class="text-2xl leading-[1] font-bold underline decoration-blue-700 underline-offset-4 decoration-4"
-          >
-            Automatización a un nuevo nivel.
-          </h2>
-          <p class="mt-4">
-            En ingenia buscamos proveer a nuestros clientes soluciones avanzadas
-            con lo último en equipos de control, cumpliendo los tiempos de
-            entrega y trabajando bajo los principios de óptima calidad.
-          </p>
-        </div>
-      </article>
+    <!-- about-us section -->
+    <section
+      id="acerca-de-nosotros"
+      class="grid sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-4 pt-8 sm:pt-4 lg:pt-8 container mx-auto px-4 xl:max-w-screen-xl">
+      <AboutUsCard img="/about-us-1.webp" order="sm:order-2 lg:order-1">
+        <AboutUsCardTitle>Automatización a un nuevo nivel.</AboutUsCardTitle>
+        <p class="mt-4">
+          En ingenia buscamos proveer a nuestros clientes soluciones avanzadas
+          con lo último en equipos de control, cumpliendo los tiempos de entrega
+          y trabajando bajo los principios de óptima calidad.
+        </p>
+      </AboutUsCard>
 
-      <article class="px-8 py-16 lg:col-span-2 flex items-center">
+      <article
+        class="p-8 flex items-center sm:order-1 lg:order-2 sm:col-span-2">
         <div>
           <h2 class="text-4xl leading-[1] font-bold">
             Acerca de nosotros<span class="text-blue-700">.</span>
@@ -86,49 +74,44 @@ import Layout from "../layouts/main-layout.astro";
         </div>
       </article>
 
-      <article
-        class="grid place-items-center relative before:absolute before:filter before:grayscale px-8 py-24 before:-z-20 before:bg-[url('/about-us-2.webp')] before:bg-cover before:bg-center before:inset-0 before:brightness-[40%] hover:before:scale-110 overflow-hidden before:transition-all before:duration-300 before:hover:brightness-[30%]"
-      >
-        <div class="text-white">
-          <h2
-            class="text-2xl leading-[1] font-bold underline decoration-blue-700 underline-offset-4 decoration-4"
-          >
-            Especialidades tecnológicas.
-          </h2>
-          <p class="mt-4">
-            Entre nuestros servicios especializados se encuentran el control
-            automático con PLCs y PACs, control de movimiento, visualización
-            mediante HMIs y SCADA, instrumentación, identificación y manejo de
-            datos.
-          </p>
-        </div>
-      </article>
+      <AboutUsCard img="/about-us-1.webp" order="sm:order-3 lg:order-3">
+        <AboutUsCardTitle>Especialidades tecnológicas.</AboutUsCardTitle>
+        <p class="mt-4">
+          Entre nuestros servicios especializados se encuentran el control
+          automático con PLCs y PACs, control de movimiento, visualización
+          mediante HMIs y SCADA, instrumentación, identificación y manejo de
+          datos.
+        </p>
+      </AboutUsCard>
     </section>
 
-    <!-- services section -->
-    <section id="servicios" class="grid">
-      <ServiceCard img="/services-01.webp" alt="">
-        <ServiceTitle>
+    <!-- service section -->
+    <section
+      id="servicios"
+      class="grid container px-4 mx-auto xl:max-w-screen-xl sm:gap-8 pt-8">
+      <ServiceCard img="/services-1.webp" alt="">
+        <ServiceCardTitle>
           Automatización de procesos y migración de tecnologías
-        </ServiceTitle>
-        <p class="mt-4 text-zinc-500">
+        </ServiceCardTitle>
+        <p class="text-zinc-500">
           Contamos con servicio de consultoría, diseño e implementación de
           sistemas de control automático mediante PLCs y PACs con capacidad de
           integración con herramientas de visualización y control como HMIs,
           Panel PCs y SCADA.
         </p>
-        <p class="mt-2 text-zinc-500">
+        <p class="text-zinc-500">
           Nos especializamos también en control de movimiento con accionamientos
           AC, DC y servoasistidos. En caso de poseer sistemas con equipos de
           control obsoletos, contamos con servicio de renovación, actualización,
           migración o sustitución de sistemas.
         </p>
       </ServiceCard>
-      <ServiceCard img="/services-02.webp" alt="" isInverted>
-        <ServiceTitle>
+
+      <ServiceCard img="/services-2.webp" alt="" isInverted={true}>
+        <ServiceCardTitle>
           Soporte y mantenimiento de sistemas de automatización
-        </ServiceTitle>
-        <p class="mt-4 text-zinc-500">
+        </ServiceCardTitle>
+        <p class="text-zinc-500">
           Contamos con servicios de mantenimiento preventivo y correctivo para
           sistemas de control automático independiente de la marca o fabricante
           de estos. Para esto contamos con especialistas capaces de analizar el
@@ -136,25 +119,25 @@ import Layout from "../layouts/main-layout.astro";
           de hardware y comportamiento de las señales eléctricas de sensores y
           actuadores.
         </p>
-        <p class="mt-2 text-zinc-500">
-          Envíe sus solicitudes de servicios de ingeniería a
-          <a
-            href="mailto:soporte@ingenia.com.sv"
-            class="text-blue-700 underline">soporte@ingenia.com.sv</a
-          >
+        <p class="text-zinc-500">
+          Envíe sus solicitudes de servicios de ingeniería a{" "}
+          <a href="mailto:soporte@ingenia.com.sv" class="text-blue-700">
+            soporte@ingenia.com.sv
+          </a>
         </p>
       </ServiceCard>
-      <ServiceCard img="/services-03.webp" alt="">
-        <ServiceTitle>
+
+      <ServiceCard img="/services-3.webp" alt="">
+        <ServiceCardTitle>
           Integración de dispositivos de diversas tecnologías al sistema
           automatizado
-        </ServiceTitle>
-        <p class="mt-4 text-zinc-500">
+        </ServiceCardTitle>
+        <p class="text-zinc-500">
           En el área de integración de sistemas contamos con la capacidad de
           obtener datos de todo tipo de sensores, transmisores y dispositivos de
           identificación como escaners de códigos de barras, RFID y más.
         </p>
-        <p class="mt-2 text-zinc-500">
+        <p class="text-zinc-500">
           Realizamos consultorías para la integración de todo tipo de
           tecnologías con PLCs, HMIs, Panel PCs, SCADA y Bases de Datos.
         </p>
