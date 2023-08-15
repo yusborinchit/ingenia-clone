@@ -232,3 +232,22 @@ const CLIENTS_4 = [
     </section>
   </main>
 </Layout>
+
+<style is:global>
+  .sponsors-carrousel-rtl {
+    animation: carrousel 15s linear infinite normal;
+  }
+
+  .sponsors-carrousel-ltr {
+    animation: carrousel 15s linear infinite reverse;
+  }
+
+  @keyframes carrousel {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
