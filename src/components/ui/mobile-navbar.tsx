@@ -5,7 +5,7 @@ interface DesktopNavbarProps {
 
 function MobileNavbar({ navLinks, handleClose }: DesktopNavbarProps) {
   return (
-    <nav className="flex flex-col absolute md:hidden gap-4 text-sm z-30 h-screen right-0 top-0 p-4 bg-blue-900">
+    <nav className="flex flex-col absolute lg:hidden gap-4 text-sm z-30 h-screen right-0 top-0 p-4 bg-blue-900">
       <button
         aria-label="close menu"
         onClick={handleClose}
@@ -24,7 +24,7 @@ function MobileNavbar({ navLinks, handleClose }: DesktopNavbarProps) {
 
       <ul className="flex flex-col">
         {navLinks.map((item) => (
-          <li className="flex">
+          <li key={`${item.label}-mobile`} className="flex">
             <a
               href={item.href}
               className="py-2 text-white hover:underline focus-visible:underline">

@@ -1,17 +1,61 @@
 ---
 import AboutUsCard from "../components/ui/about-us-card";
 import AboutUsCardTitle from "../components/ui/about-us-card-title";
+import ClientCarrousel from "../components/ui/client-carrousel";
 import Header from "../components/ui/header";
 import ServiceCard from "../components/ui/service-card";
 import ServiceCardTitle from "../components/ui/service-card-title";
 import Layout from "../layouts/main-layout.astro";
+
+const CLIENTS_1 = [
+  { img: "/clients/ab-inbev.png" },
+  { img: "/clients/aes.png" },
+  { img: "/clients/arsal.jpg" },
+  { img: "/clients/avx.png" },
+  { img: "/clients/bayer.png" },
+  { img: "/clients/bocadeli.png" },
+  { img: "/clients/carvajal.png" },
+  { img: "/clients/cassa.png" },
+];
+
+const CLIENTS_2 = [
+  { img: "/clients/chevron.png" },
+  { img: "/clients/cmi.png" },
+  { img: "/clients/cocacola.png" },
+  { img: "/clients/diana.webp" },
+  { img: "/clients/fertica.png" },
+  { img: "/clients/grupo-bimbo.png" },
+  { img: "/clients/grupo-proyect.jpg" },
+  { img: "/clients/hanes-brands-inc.png" },
+];
+
+const CLIENTS_3 = [
+  { img: "/clients/holcim.webp" },
+  { img: "/clients/ilc.jpg" },
+  { img: "/clients/kimberly-clark.png" },
+  { img: "/clients/lactolac.png" },
+  { img: "/clients/lageo.png" },
+  { img: "/clients/livsmart.jpg" },
+  { img: "/clients/mc-cormick.png" },
+  { img: "/clients/plycem.jpg" },
+];
+const CLIENTS_4 = [
+  { img: "/clients/procaps.png" },
+  { img: "/clients/puma-energy.png" },
+  { img: "/clients/sherwin-williams.png" },
+  { img: "/clients/sigmaq.jpg" },
+  { img: "/clients/termoencogibles.jpg" },
+  { img: "/clients/termopuerto.jpg" },
+  { img: "/clients/unilever.png" },
+  { img: "/clients/vijosa.png" },
+];
 ---
 
 <Layout title="Ingenia Clone | Inicio">
   <!-- header -->
   <Header client:only="react" />
-
   <main>
+    <!-- hero section -->
     <section class="h-screen relative">
       <div
         class="container flex h-full items-center px-4 mx-auto xl:max-w-screen-xl">
@@ -20,6 +64,7 @@ import Layout from "../layouts/main-layout.astro";
           Soluciones integrales en automatización industrial
         </h1>
       </div>
+
       <div
         class="absolute w-full h-full left-0 pointer-events-none top-0 before:absolute before:w-full before:h-full before:bg-blue-700 before:inset-0 before:opacity-50 before:-z-20">
         <video
@@ -35,7 +80,7 @@ import Layout from "../layouts/main-layout.astro";
     <!-- about-us section -->
     <section
       id="acerca-de-nosotros"
-      class="grid sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-4 pt-8 sm:pt-4 lg:pt-8 container mx-auto px-4 xl:max-w-screen-xl">
+      class="grid sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-4 pt-8 sm:pt-4 lg:pt-8 sm:mt-0 lg:mt-12 mt-12 container mx-auto px-4 xl:max-w-screen-xl">
       <AboutUsCard img="/about-us-1.webp" order="sm:order-2 lg:order-1">
         <AboutUsCardTitle>Automatización a un nuevo nivel.</AboutUsCardTitle>
         <p class="mt-4">
@@ -88,11 +133,12 @@ import Layout from "../layouts/main-layout.astro";
     <!-- service section -->
     <section
       id="servicios"
-      class="grid container px-4 mx-auto xl:max-w-screen-xl sm:gap-8 pt-8">
+      class="grid container px-4 mx-auto xl:max-w-screen-xl sm:gap-8 mt-12 pt-8">
       <ServiceCard img="/services-1.webp" alt="">
         <ServiceCardTitle>
           Automatización de procesos y migración de tecnologías
         </ServiceCardTitle>
+
         <p class="text-zinc-500">
           Contamos con servicio de consultoría, diseño e implementación de
           sistemas de control automático mediante PLCs y PACs con capacidad de
@@ -111,6 +157,7 @@ import Layout from "../layouts/main-layout.astro";
         <ServiceCardTitle>
           Soporte y mantenimiento de sistemas de automatización
         </ServiceCardTitle>
+
         <p class="text-zinc-500">
           Contamos con servicios de mantenimiento preventivo y correctivo para
           sistemas de control automático independiente de la marca o fabricante
@@ -132,6 +179,7 @@ import Layout from "../layouts/main-layout.astro";
           Integración de dispositivos de diversas tecnologías al sistema
           automatizado
         </ServiceCardTitle>
+
         <p class="text-zinc-500">
           En el área de integración de sistemas contamos con la capacidad de
           obtener datos de todo tipo de sensores, transmisores y dispositivos de
@@ -142,6 +190,45 @@ import Layout from "../layouts/main-layout.astro";
           tecnologías con PLCs, HMIs, Panel PCs, SCADA y Bases de Datos.
         </p>
       </ServiceCard>
+    </section>
+
+    <!-- our-experience -->
+    <!-- <section
+      id="experiencia"
+      class="pt-8 container px-4 mt-12 mx-auto xl:max-w-screen-xl">
+      <h2 class="text-4xl px-8 leading-[1] text-center font-bold w-full">
+        Nuestra experiencia<span class="text-blue-700">.</span>
+      </h2>
+      <p class="text-zinc-500 mt-4 text-center max-w-lg mx-auto">
+        Nuestra experiencia abarca una gran variedad de áreas de aplicación de
+        la automatización para diversos sectores de la industria. Entre estos
+        figuran:
+      </p>
+    </section> -->
+
+    <section
+      class="pt-8 px-4 relative container xl:max-w-screen-xl mt-12 flex flex-col mx-auto">
+      <h2 class="text-4xl leading-[1] font-bold text-center">
+        Nuestros clientes<span class="text-blue-700">.</span>
+      </h2>
+      <p class="text-zinc-500 mt-4 text-center">
+        Forma parte de las empresas que trabajan con nosotros:
+      </p>
+
+      <div class="flex flex-col gap-4 overflow-hidden mt-8 relative">
+        <div
+          class="absolute z-10 pointer-events-none inset-0 bg-gradient-to-r from-white via-transparent to-white">
+        </div>
+
+        <ClientCarrousel clients={CLIENTS_1} />
+        <ClientCarrousel clients={CLIENTS_2} direction="ltr" />
+        <ClientCarrousel clients={CLIENTS_3} />
+        <ClientCarrousel clients={CLIENTS_4} direction="ltr" />
+      </div>
+    </section>
+
+    <section
+      class="pt-8 px-4 relative container xl:max-w-screen-xl mt-12 flex flex-col mx-auto">
     </section>
   </main>
 </Layout>

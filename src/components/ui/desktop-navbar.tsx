@@ -4,10 +4,10 @@ interface DesktopNavbarProps {
 
 function DesktopNavbar({ navLinks }: DesktopNavbarProps) {
   return (
-    <nav className="hidden md:flex items-center gap-4 text-sm">
+    <nav className="hidden lg:flex items-center gap-4 text-sm">
       <ul className="flex">
         {navLinks.map((item) => (
-          <li className="flex">
+          <li key={`${item.label}-desktop`} className="flex">
             <a
               href={item.href}
               className="px-2 text-white hover:underline focus-visible:underline">

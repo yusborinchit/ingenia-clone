@@ -34,7 +34,6 @@ function Header() {
   return (
     <>
       <div ref={scrollWatcherRef} data-scroll-watcher />
-
       <header
         id="primary-header"
         data-sticky={isSticky}
@@ -55,7 +54,7 @@ function Header() {
           <button
             aria-label="open menu"
             onClick={() => setIsOpen(true)}
-            className="md:hidden text-white">
+            className="lg:hidden text-white">
             <MenuIcon />
           </button>
         </div>
