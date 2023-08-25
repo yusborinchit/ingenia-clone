@@ -1,0 +1,58 @@
+---
+import LocationIcon from "../icons/location-icon";
+import MailIcon from "../icons/mail-icon";
+import PhoneIcon from "../icons/phone-icon";
+---
+
+<section
+  id="contacto"
+  class="pt-8 px-4 relative container xl:max-w-screen-xl mt-12 flex flex-col gap-4 mx-auto">
+  <h2 class="text-4xl leading-[1] font-bold text-center md:text-start">
+    Contacto<span class="text-blue-700">.</span>
+  </h2>
+  <div class="grid gap-4 md:grid-cols-2">
+    <ul class="flex flex-col gap-4 order-2 md:order-1">
+      <li class="flex gap-2 items-center">
+        <div class="p-[6px] bg-blue-800 rounded-full text-white">
+          <LocationIcon />
+        </div>
+        <p class="text-zinc-500">
+          Centro Comercial Distrito Las Piletas, Local #28, Kilómetro 12 1/2,
+          Carretera al Puerto de La Libertad, Santa Tecla, La Libertad, El
+          Salvador.
+        </p>
+      </li>
+      <li class="flex gap-2 items-center">
+        <div class="p-[6px] bg-blue-800 rounded-full text-white">
+          <MailIcon />
+        </div>
+        <a href="mailto:info@ingenia.com.sv" class="text-blue-700">
+          info@ingenia.com.sv
+        </a>
+      </li>
+      <div class="flex gap-4">
+        <li class="flex gap-2 items-center">
+          <div class="p-[6px] bg-blue-800 rounded-full text-white">
+            <PhoneIcon />
+          </div>
+          <a href="tel:+50321249500" class="text-blue-700"> +503 2124-9500</a>
+        </li>
+        <li class="flex gap-2 items-center">
+          <div class="p-[6px] bg-blue-800 rounded-full text-white">
+            <PhoneIcon />
+          </div>
+          <a href="tel:+50321249501" class="text-blue-700"> +503 2124-9501</a>
+        </li>
+      </div>
+    </ul>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.7281227809085!2d-56.1559347248847!3d-34.86305817123972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f80859196b1db%3A0xfa0cae26c29546da!2sAntel%20Arena!5e0!3m2!1ses-419!2suy!4v1692924790270!5m2!1ses-419!2suy"
+      width="400"
+      height="300"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="w-full rounded order-1 md:order-2"></iframe>
+  </div>
+</section>

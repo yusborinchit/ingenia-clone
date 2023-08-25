@@ -1,0 +1,63 @@
+---
+import ServiceCard from "../ui/service-card";
+import ServiceCardTitle from "../ui/service-card-title";
+---
+
+<section
+  id="servicios"
+  class="grid container px-4 mx-auto xl:max-w-screen-xl sm:gap-8 mt-12 pt-8">
+  <ServiceCard img="/services-1.webp" alt="">
+    <ServiceCardTitle>
+      Automatización de procesos y migración de tecnologías
+    </ServiceCardTitle>
+
+    <p class="text-zinc-500">
+      Contamos con servicio de consultoría, diseño e implementación de sistemas
+      de control automático mediante PLCs y PACs con capacidad de integración
+      con herramientas de visualización y control como HMIs, Panel PCs y SCADA.
+    </p>
+    <p class="text-zinc-500">
+      Nos especializamos también en control de movimiento con accionamientos AC,
+      DC y servoasistidos. En caso de poseer sistemas con equipos de control
+      obsoletos, contamos con servicio de renovación, actualización, migración o
+      sustitución de sistemas.
+    </p>
+  </ServiceCard>
+
+  <ServiceCard img="/services-2.webp" alt="" isInverted={true}>
+    <ServiceCardTitle>
+      Soporte y mantenimiento de sistemas de automatización
+    </ServiceCardTitle>
+
+    <p class="text-zinc-500">
+      Contamos con servicios de mantenimiento preventivo y correctivo para
+      sistemas de control automático independiente de la marca o fabricante de
+      estos. Para esto contamos con especialistas capaces de analizar el sistema
+      de control para buscar fallas tanto a nivel de programa como de hardware y
+      comportamiento de las señales eléctricas de sensores y actuadores.
+    </p>
+    <p class="text-zinc-500">
+      Envíe sus solicitudes de servicios de ingeniería a{" "}
+      <a href="mailto:soporte@ingenia.com.sv" class="text-blue-700">
+        soporte@ingenia.com.sv
+      </a>
+    </p>
+  </ServiceCard>
+
+  <ServiceCard img="/services-3.webp" alt="">
+    <ServiceCardTitle>
+      Integración de dispositivos de diversas tecnologías al sistema
+      automatizado
+    </ServiceCardTitle>
+
+    <p class="text-zinc-500">
+      En el área de integración de sistemas contamos con la capacidad de obtener
+      datos de todo tipo de sensores, transmisores y dispositivos de
+      identificación como escaners de códigos de barras, RFID y más.
+    </p>
+    <p class="text-zinc-500">
+      Realizamos consultorías para la integración de todo tipo de tecnologías
+      con PLCs, HMIs, Panel PCs, SCADA y Bases de Datos.
+    </p>
+  </ServiceCard>
+</section>

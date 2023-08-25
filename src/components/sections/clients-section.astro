@@ -1,0 +1,25 @@
+---
+import { clients } from "../../data/clients";
+import ClientCarrousel from "../ui/client-carrousel";
+---
+
+<section
+  class="pt-8 px-4 relative container xl:max-w-screen-xl mt-12 flex flex-col mx-auto">
+  <h2 class="text-4xl leading-[1] font-bold text-center">
+    Nuestros clientes<span class="text-blue-700">.</span>
+  </h2>
+  <p class="text-zinc-500 mt-4 text-center">
+    Forma parte de las empresas que trabajan con nosotros:
+  </p>
+
+  <div class="flex flex-col gap-4 overflow-hidden mt-8 relative">
+    <div
+      class="absolute z-10 pointer-events-none inset-0 bg-gradient-to-r from-white via-transparent to-white">
+    </div>
+
+    <ClientCarrousel clients={clients.slice(0, 7)} />
+    <ClientCarrousel clients={clients.slice(8, 16)} direction="ltr" />
+    <ClientCarrousel clients={clients.slice(16, 24)} />
+    <ClientCarrousel clients={clients.slice(24, 32)} direction="ltr" />
+  </div>
+</section>
